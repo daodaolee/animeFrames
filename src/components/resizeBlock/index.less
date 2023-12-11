@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-row {
+  .resize-bar::-webkit-scrollbar {
+    width: 20px;
+    height: inherit;
+    background: #363636;
+    cursor: ew-resize;
+  }
+
+  .resize-bar::-webkit-scrollbar:hover {
+    cursor: ew-resize;
+  } 
+
+  .resize-line:hover {
+    cursor: ew-resize;
+    border-color: #363636;
+    border-style: dashed;
+  }
+
+  .resize-bar:hover~.resize-line,
+  .resize-bar:active~.resize-line {
+    cursor: ew-resize;
+    border-color: #363636;
+    border-style: dashed;
+  }
+}
+
+.flex-col {
+  .resize-bar::-webkit-scrollbar {
+    height: 20px;
+    width: inherit;
+    background: #363636;
+    cursor: ew-resize;
+  }
+
+  .resize-bar::-webkit-scrollbar:hover {
+    cursor: ns-resize;
+  }
+
+  .resize-line:hover {
+    cursor: ns-resize;
+    border-color: #363636;
+    border-style: dashed;
+  }
+
+  .resize-bar:hover~.resize-line,
+  .resize-bar:active~.resize-line {
+    cursor: ns-resize;
+    border-color: #363636;
+    border-style: dashed;
+  }
+
+}
+
+.resize-bar {
+  @apply overflow-scroll opacity-0 transition ease-in-out;
+}
+
+.resize-line {
+  @apply border-neutral-800 absolute right-0 top-0 bottom-0 transition ease-in-out;
+}
+
+.resize-box {
+  @apply absolute top-0 left-0;
+}
